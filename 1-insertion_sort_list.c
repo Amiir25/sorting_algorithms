@@ -10,6 +10,9 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *ptr, *node1, *node2, *tmp;
 
+	if (!list || !(*list) || !(*list)->next)
+		return;
+
 	ptr = *list;
 	while (ptr->next != NULL)
 	{
