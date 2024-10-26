@@ -19,50 +19,11 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-/**
- * print_array - Prints an array of integers
- *
- * @array: The array to be printed
- * @size: Number of elements in @array
- */
 
-void print_array(const int *array, size_t size)
-{
-	size_t i;
+/* Function Prototypes */
 
-	i = 0;
-	while (array && i < size)
-	{
-		if (i > 0)
-			printf(", ");
+void print_array(const int *, size_t);
+void print_list(const listint_t *list);
+void bubble_sort(int *, size_t);
 
-		printf("%d", array[i]);
-		++i;
-	}
-	printf("\n");
-}
-
-/**
- * print_list - Prints a list of integers
- *
- * @list: The list to be printed
- */
-
-void print_list(const listint_t *list)
-{
-	int i;
-
-	i = 0;
-	while (list)
-	{
-		if (i > 0)
-			printf(", ");
-
-		printf("%d", list->n);
-		++i;
-		list = list->next;
-	}
-	print("\n");
-}
-
-#end_if /*SORT_H */
+#endif /*SORT_H */
