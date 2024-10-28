@@ -31,5 +31,6 @@ void selection_sort(int *, size_t);
 void quick_sort(int *, size_t);
 void quick_sort_recursion(int *, int, int, size_t);
 int lomuto_partition(int *, int, int, size_t);
+void shell_sort(int *, size_t);
 
 #endif /*SORT_H */
