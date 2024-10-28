@@ -9,31 +9,25 @@
 
 void shell_sort(int *array, size_t size)
 {
-	int gaps[100];
-	int gap, count, temp, k;
-	size_t i, j, n;
+	size_t gap, i, j;
+	int temp;
 
-	if (array == NULL || size < 2)
-		return;
+	gap = 1;
+	while (gap < size / 3)
+		gap *= 3 + 1;
 
-	count = 0;
-	for (n = 1; n < size; n *= 3 + 1)
-		gaps[count++] = n;
-
-	for (k = count - 1; k >= 0; k--)
+	while (gap >= 1)
 	{
-		gap = gaps[k];
 		for (i = gap; i < size; i++)
 		{
 			temp = array[i];
-			for (j = i; (int)j >= gap && array[j - gap] > temp; j -= gap)
-			{
+			for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
 				array[j] = array[j - gap];
-			}
 
 			array[j] = temp;
 		}
 
 		print_array(array, size);
+		gap /= 3;
 	}
 }
