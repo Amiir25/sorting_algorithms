@@ -13,6 +13,9 @@ void shell_sort(int *array, size_t size)
 	int gap, count, temp, k;
 	size_t i, j, n;
 
+	if (array == NULL || size < 2)
+		return;
+
 	count = 0;
 	for (n = 1; n < size; n *= 3 + 1)
 		gaps[count++] = n;
