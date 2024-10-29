@@ -34,5 +34,6 @@ int lomuto_partition(int *, int, int, size_t);
 void shell_sort(int *, size_t);
 void cocktail_sort_list(listint_t **);
 void swap_nodes(listint_t **, listint_t *, listint_t *);
+void merge_sort(int *, size_t);
 
 #endif /*SORT_H */
